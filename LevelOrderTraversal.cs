@@ -10,11 +10,23 @@ namespace traversaloftree
             public node right { get; set; }
             public int info { get; set; }
         }
+
         Queue<node> q = new Queue<node>();
-        static void levelorder(node temp)
+         void levelorder(node temp)
         {
             q.Enqueue(temp);
+            while(q.Count!=0)
+            {
+                node top = q.Peek();
+                q.Dequeue();
+                Console.WriteLine(top.info);
 
+                if (top.left != null)
+                    q.Enqueue(top.left);
+                if (top.right != null)
+                    q.Enqueue(top.right);
+
+            }
 
         }
         static void Main(string[] args)
@@ -24,10 +36,10 @@ namespace traversaloftree
            
             node root = new node();
             node temp1 = new node();
-            node temp = new node();
+            node temp;
             for (int i=0;i<n;i++)
             {
-                
+                temp = new node();
                 temp.info  = int.Parse(Console.ReadLine());
                 temp.right = null;
                 temp.left = null;
@@ -63,7 +75,9 @@ namespace traversaloftree
 
             }
             temp = root;
-            levelorder(temp);
+            Program p = new Program();
+            p.levelorder(temp);
+            
             Console.ReadKey();
         }
     }
