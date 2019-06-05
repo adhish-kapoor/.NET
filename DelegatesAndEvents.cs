@@ -107,3 +107,9 @@ class Program
 }
 =================
 // Using delegates with events
+An event in C# is a way for a class to provide the notifications to clients of that class about the performed action.
+  The events are declared and raised inside a class. 
+  They are associated with the event handlers using delegates within the same class or different classes.
+  They are a part of the class and the same class is used to publish events.
+  Events use the publisher and subscriber model. 
+   
