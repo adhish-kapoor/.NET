@@ -113,3 +113,100 @@ An event in C# is a way for a class to provide the notifications to clients of t
   They are a part of the class and the same class is used to publish events.
   Events use the publisher and subscriber model. 
    
+// Properties 
+  Properties are used to provide accessibility of classes variables in an application or outside an application.
+  A property is a combination of variable and a method.   
+     
+     class Program
+{
+    private int srno = 1;
+    private string name = “John”;
+    private string subject = “Maths”;
+    public int Srno
+    {
+        get
+        {
+            return srno;
+        }
+        set
+        {
+            srno = value;
+        }
+    }
+    public string Name
+    {
+        get
+        {
+            return name;
+        }
+        set
+         {
+            name = value;
+        }
+}
+public string Subject
+{
+    get
+    {
+        return subject;
+    }
+    set
+    {
+        subject = value;
+    }
+}
+public override string ToString()
+{
+    return “Srno=”+Srno+”,Name=”+Name+”,Subject=”+Subject;
+}
+class Demo
+{
+    static void Main ( string[ ] args )
+    {
+        Program p =new Program();
+        p.Srno = 1;
+        p.Name = “Mark”;
+        p.Subject = “Science”;
+        Console.WriteLine(“Student Info:{0}”, p); //Srno=1,Name=Mark,Subject=Science
+        Console.Read();
+    }
+}
+}
+     
+// Create Read – Only Property
+Properties in C# can be made read only. The get accessor in the property is used for the implementation of the code. 
+User can only access the variables but it cannot assign values to it.
+   
+   class Camp
+{
+    int students = -1;
+    string location = string.Empty;
+    public Camp(int st1, string loc1)
+    {
+        students =st1;
+        location = loc1;
+    }
+    public int st1
+    {
+        get
+        {
+            return students;
+        }
+    }
+    public string loc1
+    {
+        get
+        {
+            return location;
+        }
+    }
+    class Demo
+    {
+        static void Main ( string [ ] args )
+        {
+            Camp c = new Camp(100,"ASR");
+            Console.WriteLine(“Students : {0}, Location {1}”, c.st1, c.loc1);  // Students:100, Location:ASR
+            Console.Read();
+        }
+    }
+}
