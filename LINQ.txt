@@ -1,0 +1,16 @@
+ var nums = "10,5,0,8,10,1,4,0,12,1";
+        
+// TODO: Using LINQ if possible (or any other way you can think of), 
+//write C# code to get the total of the 3 highest numbers from the nums variable above. 
+int? answer = null;
+
+answer = nums.Split(',').Select(int.Parse).ToArray()
+    .OrderByDescending(x => x).Take(3).Sum();
+
+==================================
+var str = "Longest word in a string";
+
+answer = str.Split(' ').OrderByDescending(x => x.Length).FirstOrDefault();
+
+==================================
+
