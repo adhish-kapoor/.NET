@@ -13,4 +13,16 @@ var str = "Longest word in a string";
 answer = str.Split(' ').OrderByDescending(x => x.Length).FirstOrDefault();
 
 ==================================
+var nums = "10,8,10,8,10,12,4,0,12,1";
 
+var answer = nums.Split(',')//.Select(int.Parse).ToArray()
+            .GroupBy(x=> x).Where(y=> y.Count() > 1);
+
+foreach (var i in answer)
+{
+    Console.WriteLine($"{i.Key} - {i.Count()}");
+}
+
+//10 - 3
+//8 -2
+//12 - 2
