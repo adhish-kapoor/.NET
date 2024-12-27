@@ -12,6 +12,23 @@ var str = "Longest word in a string";
 
 answer = str.Split(' ').OrderByDescending(x => x.Length).FirstOrDefault();
 
+=============================================
+
+var nums = "adi,Rakshit,anil,SUDESH,abha";
+
+// TODO: Using LINQ if possible (or any other way you can think of), 
+//write C# code to get the total of the 3 highest numbers from the nums variable above. 
+
+var answer = nums.Split(',')
+    .Where(x=> String.Equals(x, x.ToUpper()));
+
+//Console.WriteLine(answer);
+
+foreach (var i in answer)
+{
+    Console.WriteLine(i); //SUDESH
+}
+
 ==================================
 var nums = "10,8,10,8,10,12,4,0,12,1";
 
