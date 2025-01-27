@@ -14,10 +14,7 @@ answer = str.Split(' ').OrderByDescending(x => x.Length).FirstOrDefault();
 
 =============================================
 
-var nums = "adi,Rakshit,anil,SUDESH,abha";
-
-// TODO: Using LINQ if possible (or any other way you can think of), 
-//write C# code to get the total of the 3 highest numbers from the nums variable above. 
+var nums = "adi,Rakshit,anil,SUDESH,abha"; 
 
 var answer = nums.Split(',')
     .Where(x=> String.Equals(x, x.ToUpper()));
