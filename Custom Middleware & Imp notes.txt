@@ -36,3 +36,22 @@ public void ConfigureServices(IServiceCollection services) {
                 endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+========================================================
+
+=> HttpClient vs WebClient
+
+HttpClient available .Net framework 4.5 or later versions. The HttpClient provides functionality that neither the Webclient or HttpWebRequest does.
+ 
+For example, with HttpsClient we can make multiple requests without having to create a new object.
+ 
+Http class makes downloading files on separate threads easier. 
+It is the preferred way to consume HTTP requests unless you have a specific reason not to use it. 
+HttpClient combines the flexibility of HttpWebRequest and WebClient.
+
+HttpClient doesn't support FTP, mocking and testing  HttpClient is easier. 
+All the I/O bound methods in HttpClient are asynchronous, and we can use the same HttpClient instance to make concurrent requests as well.
+
+The System.Net.WebClient class provides a high-level abstraction on top of HttpWebRequest. 
+WebClient is just a wrapper around HttpWebRequest, so it uses HttpWebRequest internally.
+The WebClient bit slow compared to HttpWebRequest.But is very much less code. 
+we can use WebClient for simple ways to connect and work with HTTP services.
