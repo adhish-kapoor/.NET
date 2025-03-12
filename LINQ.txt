@@ -40,3 +40,19 @@ foreach (var i in answer)
 //10 - 3
 //8 -2
 //12 - 2
+
+==============================
+var nums = "12,10,12,10,4,9,8,10,9";
+
+// TODO: max number and it's count 
+
+var answer = nums.Split(',').Select(int.Parse).ToArray()
+    .GroupBy(x => x)
+    .Select(x => new
+    {
+        number = x.Key,
+        count = x.Count()
+    }).OrderByDescending(x => x.count)
+    .FirstOrDefault();
+
+Console.WriteLine(answer.number + " " + answer.count); // 10 3
